@@ -94,8 +94,13 @@ async function init() {
       document.querySelector(".navbar").classList.add("winner");
       done = true;
       return;
+      //loss
     } else if (currentRow === ROUNDS) {
       message.innerText = `You lose! The word was ${word}`;
+      message.style.display = "block";
+      setTimeout(() => {
+        message.style.display = "none";
+      }, 3000);
       done = true;
     }
     currentGuess = "";
